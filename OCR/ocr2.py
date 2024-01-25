@@ -7,7 +7,7 @@ import neurolab as nl
 #②変数定義(use_n：読み込むデータ数 train_n：学習に使用するデータ数)
 ans_labels="abcdefghijklmnopqrstuvwxyz"
 use_n = 50000
-train_n = int(0.60*use_n)
+train_n = int(0.90*use_n)
 pixel_n = 8*16
 ans_n = len(ans_labels)
 data = []
@@ -46,7 +46,7 @@ for d, l in zip(data[:train_n], labels[:train_n]):
 for char in average_data:
     average_data[char] = np.mean(average_data[char], axis=0)
 
-#print(average_data)
+print(average_data)
 
 # 学習素材でテスト
 correct = 0
@@ -74,6 +74,15 @@ print(f"結果: {correct / test_n}")
 
 #print(sum_diff)
 
+
+
+
+"""
+0.90 -> 結果: 0.3506(test:5000)
+0.80 -> 結果: 0.3352(test:10000)
+0.60 -> 結果: 0.35215(test:20000)
+0.30 -> 結果: 0.3450285714285714(test:35000)
+
 import matplotlib.pyplot as plt
 from PIL import Image
 
@@ -90,12 +99,4 @@ for char in average_data:
     
     # 画像をPNGファイルとして保存
     img.save(f"{char}.png")
-
-
-"""
-0.90 -> 結果: 0.3506(test:5000)
-0.80 -> 結果: 0.3352(test:10000)
-0.60 -> 結果: 0.35215(test:20000)
-0.30 -> 結果: 0.3450285714285714(test:35000)
-
 """

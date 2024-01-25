@@ -6,12 +6,12 @@ import neurolab as nl
 
 #②変数定義(use_n：読み込むデータ数 train_n：学習に使用するデータ数)
 ans_labels="abcdefghijklmnopqrstuvwxyz"
-use_n = 9
+use_n = 5
 train_n = int(0.9*use_n)
 pixel_n = 8*16
 ans_n = len(ans_labels)
 data = []
-target = 'f'
+target = 'z'
 
 #③学習素材の読み込み
 with open('letter.data', 'r') as f:

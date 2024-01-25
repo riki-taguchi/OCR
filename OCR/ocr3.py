@@ -50,7 +50,7 @@ for char in average_data:
     data_abc = np.array(average_data[char])
 
     # KMeansクラスを初期化します。ここでは、クラスタ数を2に設定し、初期化方法を'k-means++'に設定しています。
-    kmeans = KMeans(n_clusters=5, init='k-means++', n_init=10, random_state=0)
+    kmeans = KMeans(n_clusters=4, init='k-means++', n_init=10, random_state=0)
 
     # データに対してk-meansアルゴリズムを適用します。
     kmeans.fit(data_abc)
@@ -106,7 +106,6 @@ for char in average_data:
         
         # 画像をPNGファイルとして保存。ファイル名には文字とインデックスを含めます。
         img.save(f"kmeans_{len(average_data[char])}_{char}_{i}.png")
-
 
 #print(sum_diff)
 
